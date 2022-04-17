@@ -1,0 +1,37 @@
+workdir: /media/stephen/Elements/RNA-Seq-PDX/analysis
+
+data: ../config/samples.tsv
+
+paired: True
+
+strand :
+    A : RF
+    B : unstranded
+
+
+ignoreChrom: ../config/ignoreChrom.txt
+
+genome:
+    build: GRCh38
+    transcriptome:
+        - ../genome/gencode.v38.transcripts-modHeader.fa.gz
+    index: ../genome/hisat2Index/genome_snp_rep
+    gff3: ../genome/gencode.v38.annotation-noChr.gff3.gz
+
+cutadapt:
+    forwardAdapter: AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+    reverseAdapter: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+    overlap:        3
+    errorRate:      0.1
+    minimumLength:  1
+    qualityCutoff:  0,0
+    GCcontent:      41
+
+misc:
+    inferExperimentSampleSize: 200000
+    sample:                    0
+    readDuplication:           False
+    geneBodyCoverage:          False
+
+fastqScreen: ../config/fastq_screen.config
+multiQCconfig: ../config/multiqc_config.yaml

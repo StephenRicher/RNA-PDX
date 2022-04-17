@@ -1,0 +1,9 @@
+data/
+genome/
+archive/
+analysis/
+.snakemake/
+*gz
+.Rhistory
+treatment.rds
+response.rds
