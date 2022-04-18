@@ -29,4 +29,3 @@ for (name in c('treatment', 'response')) {
   so = sleuth_load(paste0(name, '/', name, '.rds'))
   diffexp(so, name)
 }
-

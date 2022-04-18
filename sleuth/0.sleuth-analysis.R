@@ -16,7 +16,6 @@ runSleuth = function(metadata, name, num_cores=1) {
   
 
   if (name == 'treatment') {
-    # Model cannot be fit if we also factor response
     so <- sleuth_fit(so, ~patient, 'reduced')
     so <- sleuth_fit(so, ~patient + treatment, 'full')
     testName = 'treatmentCTRL'

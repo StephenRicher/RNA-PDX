@@ -7,3 +7,4 @@ analysis/
 .Rhistory
 treatment.rds
 response.rds
+bigWig/individual/
