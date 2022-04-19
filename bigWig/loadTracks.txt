@@ -1,0 +1,10 @@
+track type=bigWig name="Pt15 (CTRIL - BEVA)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/PDOVCA_15_CTRL-minus-BEVA.bigWig?raw=true
+track type=bigWig name="Pt5 (CTRIL - BEVA)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/PDOVCA_5_CTRL-minus-BEVA.bigWig?raw=true
+track type=bigWig name="Pt126 (CTRIL - BEVA)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/PDOVCA_126_CTRL-minus-BEVA.bigWig?raw=true
+track type=bigWig name="Pt62 (CTRIL - BEVA)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/PDOVCA_62_CTRL-minus-BEVA.bigWig?raw=true
+track type=bigWig name="Pt49 (CTRIL - BEVA)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/PDOVCA_49_CTRL-minus-BEVA.bigWig?raw=true
+track type=bigWig name="Pt17 (CTRIL - BEVA)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/PDOVCA_17_CTRL-minus-BEVA.bigWig?raw=true
+track type=bigWig name="Pt69 (CTRIL - BEVA)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/PDOVCA_69_CTRL-minus-BEVA.bigWig?raw=true
+
+track type=bigWig name="Resp - Resi (CTRIL)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/responsive-minus-resistant-CTRL.bigWig?raw=true
+track type=bigWig name="Resp - Resi (BEVA)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/responsive-minus-resistant-BEVA.bigWig?raw=true
