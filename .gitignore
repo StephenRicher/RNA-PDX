@@ -8,3 +8,4 @@ analysis/
 treatment.rds
 response.rds
 bigWig/individual/
+.ipynb_checkpoints/
