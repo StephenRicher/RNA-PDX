@@ -38,3 +38,9 @@ for t in BEVA CTRL; do
         --outFileName responsive-minus-resistant-"${t}".bigWig
 
 done
+
+for file in *-minus-*[AL].bigWig; do
+     wiggletools "${file}" \
+     | python scaleZ.py \
+     | wigToBigWig -clip stdin ../genome/grch38.chrom.sizes "${file/.bigWig/-Z.bigWig}"
+done
