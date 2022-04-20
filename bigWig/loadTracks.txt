@@ -8,5 +8,5 @@ track type=bigWig visibility=2 name="Pt69"  description="Median Coverage Differe
 track type=bigWig visibility=2 name="Resp - Resi (CTRL)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/responsive-minus-resistant-CTRL-Z.bigWig?raw=true
 track type=bigWig visibility=2 name="Resp - Resi (BEVA)" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/responsive-minus-resistant-BEVA-Z.bigWig?raw=true
 
-track type="bigBed 9 ." name="Response (diffTx)" description="Blue = Resistant > Responsive, Red = Responsive > Resistant. Score = -100*lop(q)" visibility=2 itemRgb="On" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/sleuth/response-diffTx.bb?raw=true
-track type="bigBed 9 ." name="Treatment (diffTx)" description="Blue = BEVA > CTRL, Red = CTRL > BEVA. Score = -100*lop(q)" visibility=2 itemRgb="On" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/sleuth/treatment-diffTx.bb?raw=true
+track type="bigBed 9 ." filter.score=200 name="Response (diffTx)" description="Blue = Resistant > Responsive, Red = Responsive > Resistant. Score = -100*lop(q)" visibility=2 itemRgb="On" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/sleuth/response-diffTx.bb?raw=true
+track type="bigBed 9 ." filter.score=200 name="Treatment (diffTx)" description="Blue = BEVA > CTRL, Red = CTRL > BEVA. Score = -100*lop(q)" visibility=2 itemRgb="On" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/sleuth/treatment-diffTx.bb?raw=true

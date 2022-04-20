@@ -19,12 +19,14 @@ diffexp = function(so, name) {
   sleuthTableTx = merge(sleuthTableTx, sleuthTableWold[c('target_id', 'b', 'se_b')], by='target_id')
   write.csv(sleuthTableTx, file=paste0(name, '/', name, '-Tx.csv'), row.names=FALSE)
   
+  # Write filtered transcript (q < 0.01)
+  write.csv(sleuthTableTx[sleuthTableTx$qval < 0.01,], file=paste0(name, '/', name, '-Tx-q0.01.csv'), row.names=FALSE)
+  
   # Write normalised count data for each transcript for post-processing
   write.csv(so$obs_norm, file=gzfile(paste0(name, '/', name, '-obsNormCounts.csv.gz')), row.names=FALSE)
   
 }
 
-metadata = read.table('../config/sleuth-table.tsv', header=TRUE, colClasses="character")
 for (name in c('treatment', 'response')) {
   so = sleuth_load(paste0(name, '/', name, '.rds'))
   diffexp(so, name)

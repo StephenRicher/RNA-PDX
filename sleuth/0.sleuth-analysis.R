@@ -7,7 +7,7 @@ library('ggpubr')
 
 runSleuth = function(metadata, name, num_cores=1) {
   # Create subdirectory for named analysis
-  subdir = paste(sleuthDir, name, "/" ,sep="")
+  subdir = paste(name, "/" ,sep="")
   print(paste0('Saving results to ', subdir))
   dir.create(subdir, showWarnings=FALSE)
   
@@ -86,13 +86,22 @@ t2g <- dplyr::rename(t2g, target_id=ensembl_transcript_id,
 saveRDS(t2g, 'annotation/ensemblHumanTranscript2Gene.rds')
 t2g = readRDS('annotation/ensemblHumanTranscript2Gene.rds')
 
-metadata = read.table('../config/sleuth-table.tsv', 
-                      header=TRUE, colClasses="character")
-metadata$group = paste(metadata$treatment, metadata$patient, sep='-')
-metadata$path = paste0('../analysis/kallisto/', metadata$sample)
-
-# Run model of treatment controlled by 'patient'
-runSleuth(metadata, "treatment")
-
-# Run model of 'response' controlled by 'treatment'
-runSleuth(metadata, "response")
+for (name in c('response', 'treatment')) {
+  if (name == 'treatment') {
+    metadata = read.table('../config/sleuth-table.tsv', 
+                          header=TRUE, colClasses="character")
+    metadata = read.table('../config/sleuth-table.tsv', 
+                          header=TRUE, colClasses="character")
+    metadata$group = paste(metadata$treatment, metadata$patient, sep='-')
+    metadata$path = paste0('../analysis/kallisto/', metadata$sample)
+    
+  } else {
+    metadata = read.table('../config/sleuth-table-merged.tsv',
+                          header=TRUE, colClasses="character")
+    metadata$group = metadata$response
+    metadata$path = paste0('../analysis/mergedKallisto/', metadata$sample)
+    
+  }
+  # Run model of treatment controlled by 'patient'
+  runSleuth(metadata, name)
+}
