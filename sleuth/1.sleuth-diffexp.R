@@ -1,11 +1,13 @@
 library('dplyr')
 library('sleuth')
 
-diffexp = function(so, name) {
+diffexp = function(name, subdir="./") {
 
+  so = sleuth_load(paste(subdir, "/", name, '.rds', sep=''))
+  
   # Obtain gene-level differential expression results for LRT
   sleuthTableGene = sleuth_results(so, 'reduced:full', 'lrt', show_all=FALSE, pval_aggregate=TRUE)
-  write.csv(sleuthTableGene, file=paste0(name, '/', name, '-gene.csv'), row.names=FALSE)
+  write.csv(sleuthTableGene, file=paste0(subdir, '/', name, '-gene.csv'), row.names=FALSE)
   
   # Obtain consistent transcript-level differential expression results
   sleuthTableTx <- sleuth_results(so, 'reduced:full', 'lrt', show_all=FALSE, pval_aggregate=FALSE)
@@ -17,17 +19,23 @@ diffexp = function(so, name) {
   
   # Merge Beta values to transcript level LRT analysis
   sleuthTableTx = merge(sleuthTableTx, sleuthTableWold[c('target_id', 'b', 'se_b')], by='target_id')
-  write.csv(sleuthTableTx, file=paste0(name, '/', name, '-Tx.csv'), row.names=FALSE)
+  write.csv(sleuthTableTx, file=paste0(subdir, '/', name, '-Tx.csv'), row.names=FALSE)
   
   # Write filtered transcript (q < 0.05)
-  write.csv(sleuthTableTx[sleuthTableTx$qval < 0.05,], file=paste0(name, '/', name, '-Tx-q0.05.csv'), row.names=FALSE)
+  write.csv(sleuthTableTx[sleuthTableTx$qval < 0.05,], file=paste0(subdir, '/', name, '-Tx-q0.05.csv'), row.names=FALSE)
   
   # Write normalised count data for each transcript for post-processing
-  write.csv(so$obs_norm, file=gzfile(paste0(name, '/', name, '-obsNormCounts.csv.gz')), row.names=FALSE)
+  write.csv(so$obs_norm, file=gzfile(paste0(subdir, '/', name, '-obsNormCounts.csv.gz')), row.names=FALSE)
   
 }
 
 for (name in c('treatment', 'response')) {
-  so = sleuth_load(paste0(name, '/', name, '.rds'))
-  diffexp(so, name)
+  diffexp(so, name, name)
+}
+
+metadata = read.table(
+  '../config/sleuth-table.tsv',  header=TRUE, colClasses="character")
+for (patient in unique(metadata$patient)) {
+  subdir = paste("patient/", patient, "/" ,sep="")
+  diffexp(so, subdir, patient)
 }

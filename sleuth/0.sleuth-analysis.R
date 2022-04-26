@@ -5,19 +5,22 @@ library('biomaRt')
 library('ggplot2')
 library('ggpubr')
 
-runSleuth = function(metadata, name, num_cores=1) {
-  # Create subdirectory for named analysis
-  subdir = paste(name, "/" ,sep="")
-  print(paste0('Saving results to ', subdir))
-  dir.create(subdir, showWarnings=FALSE)
+runSleuth = function(metadata, name, subdir="./", num_cores=1) {
   
   so <- sleuth_prep(metadata, target_mapping=t2g, aggregation_column='ens_gene',
                     read_bootstrap_tpm=TRUE, extra_bootstrap_summary=TRUE)
   
-
+  color = 'patient'
+  shape = 'name'
   if (name == 'treatment') {
     so <- sleuth_fit(so, ~patient, 'reduced')
     so <- sleuth_fit(so, ~patient + treatment, 'full')
+    testName = 'treatmentCTRL'
+  } else if (grepl("patient/", subdir, fixed = TRUE)) {
+    so <- sleuth_fit(so, ~1, 'reduced')
+    so <- sleuth_fit(so, ~treatment, 'full')
+    color = 'treatment'
+    shape = 19
     testName = 'treatmentCTRL'
   } else {
     so <- sleuth_fit(so, ~treatment, 'reduced')
@@ -38,7 +41,7 @@ runSleuth = function(metadata, name, num_cores=1) {
   ## PCA by group ##
   pcaData = plot_pca(so, color_by='group')$data
   pcaPlot = ggscatter(
-    data=pcaData , x='PC1', y='PC2', color='patient', shape=name, size=5) +
+    data=pcaData , x='PC1', y='PC2', color=color, shape=shape, size=5) +
     scale_color_brewer(palette = "Dark2")
   ggsave(paste(subdir, name, '-PCA.png', sep=''), pcaPlot, dpi = 300)
   
@@ -90,8 +93,6 @@ for (name in c('response', 'treatment')) {
   if (name == 'treatment') {
     metadata = read.table('../config/sleuth-table.tsv', 
                           header=TRUE, colClasses="character")
-    metadata = read.table('../config/sleuth-table.tsv', 
-                          header=TRUE, colClasses="character")
     metadata$group = paste(metadata$treatment, metadata$patient, sep='-')
     metadata$path = paste0('../analysis/kallisto/', metadata$sample)
     
@@ -103,5 +104,18 @@ for (name in c('response', 'treatment')) {
     
   }
   # Run model of treatment controlled by 'patient'
-  runSleuth(metadata, name)
+  # Create subdirectory for named analysis
+  subdir = paste(name, "/" ,sep="")
+  dir.create(subdir, showWarnings=FALSE)
+  runSleuth(metadata, name, subdir)
+}
+
+metadata = read.table(
+  '../config/sleuth-table.tsv',  header=TRUE, colClasses="character")
+for (patient in unique(metadata$patient)) {
+  subdir = paste("patient/", patient, "/" ,sep="")
+  dir.create(subdir, showWarnings=FALSE)
+  submeta = metadata[metadata$patient == patient,]
+  submeta$path = paste0('../analysis/kallisto/', submeta$sample)
+  runSleuth(submeta, patient, subdir)
 }
