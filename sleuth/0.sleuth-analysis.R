@@ -10,22 +10,19 @@ runSleuth = function(metadata, name, subdir="./", num_cores=1) {
   so <- sleuth_prep(metadata, target_mapping=t2g, aggregation_column='ens_gene',
                     read_bootstrap_tpm=TRUE, extra_bootstrap_summary=TRUE)
   
-  color = 'patient'
-  shape = 'name'
-  if (name == 'treatment') {
-    so <- sleuth_fit(so, ~patient, 'reduced')
-    so <- sleuth_fit(so, ~patient + treatment, 'full')
-    testName = 'treatmentCTRL'
-  } else if (grepl("patient/", subdir, fixed = TRUE)) {
+
+  if (grepl("patient/", subdir, fixed = TRUE)) {
     so <- sleuth_fit(so, ~1, 'reduced')
     so <- sleuth_fit(so, ~treatment, 'full')
     color = 'treatment'
     shape = 19
     testName = 'treatmentCTRL'
   } else {
-    so <- sleuth_fit(so, ~treatment, 'reduced')
-    so <- sleuth_fit(so, ~treatment + response, 'full')
-    testName = 'responseresponsive'
+    so <- sleuth_fit(so, ~treatment + patient, 'reduced')
+    so <- sleuth_fit(so, ~treatment + patient + treatment:patient, 'full')
+    color = 'patient'
+    shape = 'treatment'
+    testName = 'treatmentCTRL' # Only 1 comparison!
   }
   
   so <- sleuth_lrt(so, 'reduced', 'full')
@@ -41,7 +38,7 @@ runSleuth = function(metadata, name, subdir="./", num_cores=1) {
   ## PCA by group ##
   pcaData = plot_pca(so, color_by='group')$data
   pcaPlot = ggscatter(
-    data=pcaData , x='PC1', y='PC2', color=color, shape=shape, size=5) +
+    data=pcaData , x='PC1', y='PC2', color=color, shape=shape, size=5, alpha=0.9) +
     scale_color_brewer(palette = "Dark2")
   ggsave(paste(subdir, name, '-PCA.png', sep=''), pcaPlot, dpi = 300)
   
@@ -89,26 +86,13 @@ t2g <- dplyr::rename(t2g, target_id=ensembl_transcript_id,
 saveRDS(t2g, 'annotation/ensemblHumanTranscript2Gene.rds')
 t2g = readRDS('annotation/ensemblHumanTranscript2Gene.rds')
 
-for (name in c('response', 'treatment')) {
-  if (name == 'treatment') {
-    metadata = read.table('../config/sleuth-table.tsv', 
-                          header=TRUE, colClasses="character")
-    metadata$group = paste(metadata$treatment, metadata$patient, sep='-')
-    metadata$path = paste0('../analysis/kallisto/', metadata$sample)
-    
-  } else {
-    metadata = read.table('../config/sleuth-table-merged.tsv',
-                          header=TRUE, colClasses="character")
-    metadata$group = metadata$response
-    metadata$path = paste0('../analysis/mergedKallisto/', metadata$sample)
-    
-  }
-  # Run model of treatment controlled by 'patient'
-  # Create subdirectory for named analysis
-  subdir = paste(name, "/" ,sep="")
-  dir.create(subdir, showWarnings=FALSE)
-  runSleuth(metadata, name, subdir)
-}
+metadata = read.table('../config/sleuth-table.tsv', 
+                      header=TRUE, colClasses="character")
+metadata$path = paste0('../analysis/kallisto/', metadata$sample)
+metadata$group = metadata$response
+subdir = 'response/'
+dir.create('subdir', showWarnings=FALSE)
+runSleuth(metadata, 'response', subdir)
 
 metadata = read.table(
   '../config/sleuth-table.tsv',  header=TRUE, colClasses="character")

@@ -14,7 +14,11 @@ diffexp = function(name, subdir="./") {
 
   # Retrieve Wold test results with beta values
   dm = so$fits[["full"]]$design_matrix
-  test = colnames(dm)[ncol(dm)]
+  if (name == 'response') {
+    test = 'treatmentCTRL'
+  } else {
+    test = colnames(dm)[ncol(dm)]
+  }
   sleuthTableWold <- sleuth_results(so, test, 'wt', show_all=FALSE, pval_aggregate=FALSE)
   
   # Merge Beta values to transcript level LRT analysis
@@ -29,13 +33,12 @@ diffexp = function(name, subdir="./") {
   
 }
 
-for (name in c('treatment', 'response')) {
-  diffexp(so, name, name)
-}
+
+diffexp('response', 'response')
 
 metadata = read.table(
   '../config/sleuth-table.tsv',  header=TRUE, colClasses="character")
 for (patient in unique(metadata$patient)) {
   subdir = paste("patient/", patient, "/" ,sep="")
-  diffexp(so, subdir, patient)
+  diffexp(patient, subdir)
 }

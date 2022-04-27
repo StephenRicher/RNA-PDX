@@ -10,3 +10,67 @@ track type=bigWig visibility=2 name="Resp - Resi (BEVA)" bigDataUrl=https://gith
 
 track type="bigBed 9 ." filter.score=200 name="Response (diffTx)" description="Blue = Resistant > Responsive, Red = Responsive > Resistant. Score = -100*lop(q)" visibility=2 itemRgb="On" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/sleuth/response-diffTx.bb?raw=true
 track type="bigBed 9 ." filter.score=200 name="Treatment (diffTx)" description="Blue = BEVA > CTRL, Red = CTRL > BEVA. Score = -100*lop(q)" visibility=2 itemRgb="On" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/sleuth/treatment-diffTx.bb?raw=true
+
+
+track type=bigWig visibility=2 name="Pt5-BEVA-1" description="Pt5-BEVA-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_5_BEVA-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt5-BEVA-2" description="Pt5-BEVA-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_5_BEVA-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt5-BEVA-3" description="Pt5-BEVA-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_5_BEVA-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt5-CTRL-1" description="Pt5-CTRL-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_5_CTRL-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt5-CTRL-2" description="Pt5-CTRL-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_5_CTRL-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt5-CTRL-3" description="Pt5-CTRL-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_5_CTRL-3.bigWig?raw=true
+
+track type=bigWig visibility=2 name="Pt15-BEVA-1" description="Pt15-BEVA-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_BEVA-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt15-BEVA-2" description="Pt15-BEVA-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_BEVA-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt15-BEVA-3" description="Pt15-BEVA-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_BEVA-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt15-BEVA-4" description="Pt15-BEVA-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_BEVA-4.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt15-BEVA-5" description="Pt15-BEVA-5 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_BEVA-5.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt15-CTRL-1" description="Pt15-CTRL-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_CTRL-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt15-CTRL-2" description="Pt15-CTRL-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_CTRL-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt15-CTRL-3" description="Pt15-CTRL-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_CTRL-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt15-CTRL-4" description="Pt15-CTRL-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_CTRL-4.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt15-CTRL-5" description="Pt15-CTRL-5 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_15_CTRL-5.bigWig?raw=true
+
+track type=bigWig visibility=2 name="Pt17-BEVA-1" description="Pt17-BEVA-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_17_BEVA-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt17-BEVA-2" description="Pt17-BEVA-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_17_BEVA-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt17-BEVA-3" description="Pt17-BEVA-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_17_BEVA-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt17-BEVA-4" description="Pt17-BEVA-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_17_BEVA-4.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt17-CTRL-1" description="Pt17-CTRL-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_17_CTRL-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt17-CTRL-2" description="Pt17-CTRL-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_17_CTRL-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt17-CTRL-3" description="Pt17-CTRL-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_17_CTRL-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt17-CTRL-4" description="Pt17-CTRL-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_17_CTRL-4.bigWig?raw=true
+
+track type=bigWig visibility=2 name="Pt49-BEVA-1" description="Pt49-BEVA-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_49_BEVA-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt49-BEVA-2" description="Pt49-BEVA-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_49_BEVA-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt49-BEVA-3" description="Pt49-BEVA-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_49_BEVA-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt49-BEVA-4" description="Pt49-BEVA-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_49_BEVA-4.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt49-CTRL-1" description="Pt49-CTRL-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_49_CTRL-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt49-CTRL-2" description="Pt49-CTRL-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_49_CTRL-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt49-CTRL-3" description="Pt49-CTRL-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_49_CTRL-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt49-CTRL-4" description="Pt49-CTRL-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_49_CTRL-4.bigWig?raw=true
+
+track type=bigWig visibility=2 name="Pt62-BEVA-1" description="Pt62-BEVA-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_62_BEVA-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt62-BEVA-2" description="Pt62-BEVA-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_62_BEVA-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt62-BEVA-3" description="Pt62-BEVA-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_62_BEVA-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt62-BEVA-4" description="Pt62-BEVA-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_62_BEVA-4.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt62-CTRL-1" description="Pt62-CTRL-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_62_CTRL-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt62-CTRL-2" description="Pt62-CTRL-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_62_CTRL-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt62-CTRL-3" description="Pt62-CTRL-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_62_CTRL-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt62-CTRL-4" description="Pt62-CTRL-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_62_CTRL-4.bigWig?raw=true
+
+track type=bigWig visibility=2 name="Pt69-BEVA-1" description="Pt69-BEVA-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_69_BEVA-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt69-BEVA-2" description="Pt69-BEVA-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_69_BEVA-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt69-BEVA-3" description="Pt69-BEVA-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_69_BEVA-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt69-BEVA-4" description="Pt69-BEVA-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_69_BEVA-4.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt69-CTRL-1" description="Pt69-CTRL-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_69_CTRL-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt69-CTRL-2" description="Pt69-CTRL-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_69_CTRL-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt69-CTRL-3" description="Pt69-CTRL-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_69_CTRL-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt69-CTRL-4" description="Pt69-CTRL-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_69_CTRL-4.bigWig?raw=true
+
+track type=bigWig visibility=2 name="Pt126-BEVA-1" description="Pt126-BEVA-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_126_BEVA-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt126-BEVA-2" description="Pt126-BEVA-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_126_BEVA-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt126-BEVA-3" description="Pt126-BEVA-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_126_BEVA-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt126-BEVA-4" description="Pt126-BEVA-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_126_BEVA-4.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt126-CTRL-1" description="Pt126-CTRL-1 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_126_CTRL-1.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt126-CTRL-2" description="Pt126-CTRL-2 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_126_CTRL-2.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt126-CTRL-3" description="Pt126-CTRL-3 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_126_CTRL-3.bigWig?raw=true
+track type=bigWig visibility=2 name="Pt126-CTRL-4" description="Pt126-CTRL-4 Coverage" bigDataUrl=https://github.com/StephenRicher/RNA-PDX/blob/main/bigWig/individual/PDOVCA_126_CTRL-4.bigWig?raw=true
